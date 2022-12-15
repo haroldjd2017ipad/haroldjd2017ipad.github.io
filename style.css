@@ -1,0 +1,466 @@
+:root {
+    --side-margin: 10%;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+  }
+
+body {
+    background-color: rgb(5,5,5);
+    /* background-color: white; */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    width: 100%;
+}
+
+/* ---------------HEADER------------------- */
+
+.header {
+    background-color: rgb(0,0,0);
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/pfp.png);
+    /* background: linear-gradient(rgb(86, 59, 148),rgb(153,94,179));  */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;   
+}
+
+.header > .top {
+    margin-left: calc(var(--side-margin));
+    position: relative;
+    bottom: 10px;
+    width: calc(100% - var(--side-margin));
+    margin-top: 15px;
+    z-index: 100;
+}
+
+.header nav {
+    float: right;
+    margin-right: calc(var(--side-margin));
+}   
+
+.header > * {
+    display: inline-block;  
+}
+
+.navbuttons > * {
+    display: inline-block;
+}
+
+.navbuttons a {
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+}
+
+.navbuttons a:hover{
+    text-decoration: underline;
+}
+
+.top button {
+    position: absolute;
+    bottom: 9e9px;
+}
+
+.header h2 {
+    float: left;
+    position: relative;
+    bottom: 25px;
+    font-size: 35px;
+}
+
+.header .navbuttons > * {
+    margin-left: 20px;
+} 
+
+.header .navbuttons > li > a {
+    font-size: 17px;
+} 
+
+.whoami {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-25%);
+    transform: translateY(-25%);
+    border-radius: 25px;
+    margin-left: var(--side-margin)
+}
+
+.whoami::before {
+    inset: 0;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 25px;
+    border: 4px solid rgb(10,10,10);
+    width: 250px;
+    height: 250px;
+    transform: translateX(-5%) rotate(-45deg) translateY(-10%);
+}
+
+.header .role {
+    font-size: 20px;
+}
+
+.header .me {
+    position: relative;
+    bottom: 30px;
+    font-size: 55px;
+}
+
+.header .me b {
+    color: rgb(255,50,50);
+}
+
+@media only screen and (max-width: 665px) {
+    .header {
+        overflow-x: hidden;
+    }
+    .header nav {
+        margin-right: 0px;
+        top: -5px;
+        float: right;
+        position: absolute;
+        right:175px;
+        background: transparent;
+        width: 175px;
+        padding: 0px;
+        height: 100vh;
+    }
+
+    .header nav[shown="true"] {
+        transform:translateX(100%);
+        background: rgb(227, 64, 64);
+        transition: 1s;
+    }
+
+    .header nav[shown="false"] {
+        transition: 1s;
+        position: absolute;
+        right: calc(-175px);
+        background: transparent;
+    }
+
+    .navbuttons {
+        z-index: initial;
+        position: relative;
+        top: 10px;
+        padding: 0px;
+        margin-left: 0px;
+    }
+
+    .top #menu[shown="true"] {
+        bottom: 0px;
+        position: relative;
+        margin-top: 10px;
+        background: transparent;
+        border: none;
+        color: white;
+        float: right;
+        margin-right: var(--side-margin);
+        cursor: pointer;
+    }
+
+    .top #menu[shown="true"] i {
+        font-size: 35px;
+    }
+
+    .navbuttons > * {
+        display: block;
+        line-height: 50px;
+        position: relative;
+        width: 1px;
+    }
+
+    .navbuttons a {
+        left: 10px;
+        position: relative;
+    }
+
+    .navbuttons #close {
+        position: relative;
+        bottom: 0px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        height: 47px;
+        width: 50px;
+        left: -5px;
+    }
+
+    .navbuttons #close i {
+        font-size: 35px;
+        font-weight: bolder;
+        color: white;
+    }
+}
+
+/* ------------ABOUT------------- */
+
+.about {    
+    padding-top: 70px;
+    display: flex;
+    color: rgba(175,175,175);
+}
+
+.about .avatar {
+    /* width: 1px; */
+    margin-left: var(--side-margin);
+    flex-basis: 35%;
+}
+
+.about .avatar img {
+    border-radius: 3%;
+    width: 100%;
+    background-color: rgba(255,255,255,.05);
+}
+
+.about .body {
+    flex-basis: 65%;
+    margin-left: 50px;
+    margin-right: var(--side-margin);
+    width: 100%;
+    height: 100%;
+    /* transform: translateY(25%); */
+    /* background-color: red; */
+    /* width: 500px; */
+    /* float: right; */
+}
+
+.about > .body > div{
+    height: 70%;
+    position: static;
+    /* top: 150%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); */
+}
+
+.about h1 {
+    margin: 0;
+    color: rgba(255,255,255);
+    padding-top: 0px;
+    font-size: 50px;
+}
+
+.about nav {
+    position: relative;
+    right: 45px;
+}
+
+.about .nav > ul > * {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.about .nav button {
+    border: none;
+    background: transparent;
+    color: rgba(175,175,175);
+    font-size: 115%;
+    cursor: pointer;
+}
+
+.about .nav li > div {
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: rgb(255,50,50);
+    position: relative; 
+    transition: .5s;
+    left: -50%;
+    margin-left: 5px;
+}
+
+.about .nav li[aria-selected="true"] > div {
+    transform: scaleX(88%) translateX(50%);
+}
+
+.about .nav li[aria-selected="false"] > div {
+    transform: scaleX(0%) translateX(50%);
+}
+
+.about .tab {
+    margin-top: 40px;
+}
+
+.about .tab div[aria-selected="false"] {
+    bottom: 9e9px;
+}
+
+.about .tab {
+    height: 150px;
+}
+
+.about .tab div {
+    position: absolute;
+}
+
+.about .tab {
+    position: relative;
+}
+
+.Availability, .Contact {
+    line-height: 2;
+}
+
+@media only screen and (max-width: 1250px) {
+    .about .avatar {
+        flex-basis: 50%;
+    }
+    .about h1 {
+        font-size: 42.9px;
+    }
+    
+    .about label {
+        font-size: 13.7px;
+        line-height: 0;
+    }
+
+    .about .nav button {
+        font-size: 98.7%;
+    }
+
+    .about .tab {
+        font-size: 13.7px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .about {
+        flex-direction: column;
+    }
+    .about .avatar {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+    .about .avatar img {
+        width: 80%;
+        position: relative;
+        right: calc(var(--side-margin)/2.5);
+    }
+
+    .about .body {
+        flex-basis: 0;
+        width: 70%;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+}
+
+/* .about .tab > div {
+    position: relative;
+    background-color: red;
+} */
+
+/* ------------QUALITY------------- */
+
+.quality {
+    margin-left: var(--side-margin);
+    margin-right: var(--side-margin);
+    height: auto;
+    border-color: black;
+    padding-top: 70px;
+}
+
+.quality h1 {
+    margin: 0;
+    color: rgba(255,255,255);
+    padding-top: 20px;
+    font-size: 40px;
+}
+
+.quality .container {  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 40px;
+}
+
+.quality .container > div {
+    background-color: rgba(255,255,255,.05);
+    padding: 30px;
+    border-radius: 5%;
+}
+
+.quality .container > div > div {
+    border-radius: 100%;
+    background-color: rgba(255,255,255,.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    aspect-ratio: 1 / 1;
+    margin: auto;
+}
+
+.quality img { width: 70%; }
+
+.quality h2 {
+    font-weight: bold;
+    font-size: 30px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.quality label {
+    width: 100%;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.quality > .container > div  > * {
+    display: block;
+}
+.quality > .container > div > i {
+    font-size: 70px;
+    position: relative;
+    right: 8px;
+
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 100
+}
+
+/* ------------MY WORKS------------- */
+
+.works {
+    margin-top: 100px;
+    height: 100vh;
+    margin-left: var(--side-margin);
+    margin-right: var(--side-margin);
+}
+
+.works h1 {
+    font-size: 40px;
+}
+
+.works .container {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); */
+    grid-template-columns: repeat(auto-fit, calc(560px/1.8));
+    grid-auto-rows: auto;
+    grid-gap: 35px;
+}
+
+.works label {
+    font-size: 23px;
+}
+
+.works iframe {
+    margin-top: 20px;
+    border-radius: 10px;
+    width: calc(560px/1.75);
+    height: calc(315px/1.75);
+}
