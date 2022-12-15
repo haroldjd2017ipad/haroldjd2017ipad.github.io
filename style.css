@@ -99,7 +99,7 @@ body {
     position: absolute;
     z-index: -1;
     border-radius: 25px;
-    border: 4px solid rgb(10,10,10);
+    border: 4px solid rgba(10,10,10,.5);
     width: 250px;
     height: 250px;
     transform: translateX(-5%) rotate(-45deg) translateY(-10%);
@@ -120,8 +120,20 @@ body {
 }
 
 @media only screen and (max-width: 665px) {
+    .header .whoami {
+        -ms-transform: translateY(10%);
+        transform: translateY(10%);
+    }
+    .header .me {
+        font-size: 30px;
+        bottom: 0px;
+        text-shadow: 2px 2px rgba(0,0,0,.5);
+    }
+
+
     .header {
         overflow-x: hidden;
+        background-image: url(images/mobile_pfp.png);
     }
     .header nav {
         margin-right: 0px;
@@ -133,16 +145,15 @@ body {
         width: 175px;
         padding: 0px;
         height: 100vh;
+        transition: 1s;
     }
 
     .header nav[shown="true"] {
         transform:translateX(100%);
         background: rgb(227, 64, 64);
-        transition: 1s;
     }
 
     .header nav[shown="false"] {
-        transition: 1s;
         position: absolute;
         right: calc(-175px);
         background: transparent;
@@ -349,7 +360,12 @@ body {
 
     .about .body {
         flex-basis: 0;
-        width: 70%;
+        width: 80%;
+        margin-left: var(--side-margin);
+    }
+
+    .about ul {
+        width: 100%;
     }
 
     .about {
